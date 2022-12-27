@@ -1,0 +1,27 @@
+```mermaid
+flowchart TB;
+	Start([Start])
+	AccountHash[[Hash the Account Number, <br/>User's Full Name and <br/>URL of the Data Source]]
+	UsedAccount{Was the account <br/>used already?}
+	CompareAccountHash[[Compare to the <br/>Used Account List]]
+	UseOldSalt[[Use the Salt from the <br/>Used Account List]]
+	GenerateSalt[[Generate a <br/>new Salt]]
+	SaveSalt[[Add the new Salt <br/> and Account Hash to the <br/>Used Account List]]
+	MakeKYCHash[[Hash the Account Hash <br/>and the Salt]]
+	IssueVC[[Issue VC containing <br/> the Private KYC Hash]]
+	Forget[[Forget everything except the <br/> Account Hash and Salt]]
+
+
+	Start-->AccountHash
+	AccountHash-->CompareAccountHash
+	CompareAccountHash-->UsedAccount
+	UsedAccount-->|yes|UseOldSalt
+	UsedAccount-->|no|GenerateSalt
+	GenerateSalt-->SaveSalt
+	SaveSalt-->MakeKYCHash
+	UseOldSalt-->MakeKYCHash
+	MakeKYCHash-->IssueVC
+	IssueVC-->Forget
+ 	
+
+```
