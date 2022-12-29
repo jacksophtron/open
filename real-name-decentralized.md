@@ -27,8 +27,8 @@ sequenceDiagram
         User-->>Verifiable Credential Selector: Username and password
         Verifiable Credential Selector-->>VC Issuer: Username, password, <br/>puget sound energy
         VC Issuer-->>Verifiable Credential Selector: Issues Real Name VC
-        Verifiable Credential Selector-->>Software Client: Passes Real Name VC
-        Software Client-->>User: Your account is verified John Stone! 
+        Verifiable Credential Selector-->>Client Software: Passes Real Name VC
+        Client Software-->>User: Your account is verified John Stone! 
 
 ```
 
