@@ -21,7 +21,7 @@ sequenceDiagram
         participant VC Issuer
 
 	User-->>Client Software: Click's Verify Real Name
-	Client Sofware-->>User: Present VCS
+	Client Software-->>User: Present VCS
 	User-->>Verifiable Credential Selector: Select utility or bank 
         Verifiable Credential Selector->>User: Enter your credentials
         User-->>Verifiable Credential Selector: Username and password
