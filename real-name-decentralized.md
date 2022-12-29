@@ -20,7 +20,7 @@ sequenceDiagram
         participant Verifiable Credential Selector 
         participant VC Issuer
 
-	User-->>Client Software: Click's Verify Real Name
+	User-->>Client Software: Click "Verify Real Name"
 	Client Software-->>User: Present VCS
 	User-->>Verifiable Credential Selector: Select utility or bank 
         Verifiable Credential Selector->>User: Enter your credentials
@@ -45,7 +45,6 @@ sequenceDiagram
 
 	Sending User-->>Sending Software: Clicks "Post"
 	Sending Software-->>Receiving Software: Message and VC
-	Rec		
 	loop
 		Receiving Software-->>Receiving Software: Check that the VC matches the name	
 	end
