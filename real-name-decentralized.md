@@ -38,8 +38,8 @@ This is an overview of how the Real Name VC is used by message recipients (or re
 ```mermaid
 sequenceDiagram
 
-	participant Sending Software
 	participant Sending User
+	participant Sending Software
 	participant Receiving Software
         participant Receiving User
 
