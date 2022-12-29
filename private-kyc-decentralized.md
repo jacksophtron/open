@@ -67,7 +67,7 @@ sequenceDiagram
 	loop
 		Receiving Software-->>Receiving Software: Discard without Private KYC VC
 	end
-	Receiving Software-->>User: Display only messages with Private KYC
+	Receiving Software-->>Receiving User: Display only messages with Private KYC
 
 ```
 
