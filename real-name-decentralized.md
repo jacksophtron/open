@@ -20,8 +20,7 @@ sequenceDiagram
         participant Verifiable Credential Selector (VCS)
         participant VC Issuer
 
-        Client Software->>User: Verify Real Name Button
-	User-->: Click
+	User-->Client Software: Click's Verify Real Name
 	Client Sofware-->User: Display VCS
         Verifiable Credential Selector (VCS)->>User: Select utility or bank
         User->>Verifiable Credential Selector (VCS): Puget Sound Energy
