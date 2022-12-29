@@ -17,18 +17,17 @@ sequenceDiagram
 
 	participant User
         participant Client Software
-        participant Verifiable Credential Selector (VCS)
+        participant Verifiable Credential Selector 
         participant VC Issuer
 
-	User-->Client Software: Click's Verify Real Name
-	Client Sofware-->User: Display VCS
-        Verifiable Credential Selector (VCS)->>User: Select utility or bank
-        User->>Verifiable Credential Selector (VCS): Puget Sound Energy
-        Verifiable Credential Selector (VCS)->>User: Enter your credentials
-        User->>Verifiable Credential Selector (VCS): Username and password
-        Verifiable Credential Selector (VCS)->>VC Issuer: Username, password, <br/>puget sound energy
-        VC Issuer->>Verifiable Credential Selector (VCS): Real Name VC
-        Verifiable Credential Selector (VCS)->>Software Client: Real Name VC
+	User-->>Client Software: Click's Verify Real Name
+	Client Sofware-->>User: Present VCS
+	User-->>Verifiable Credential Selector: Select utility or bank 
+        Verifiable Credential Selector->>User: Enter your credentials
+        User-->>Verifiable Credential Selector: Username and password
+        Verifiable Credential Selector-->>VC Issuer: Username, password, <br/>puget sound energy
+        VC Issuer-->>Verifiable Credential Selector: Issues Real Name VC
+        Verifiable Credential Selector-->>Software Client: Passes Real Name VC
         Software Client-->>User: Your account is verified John Stone! 
 
 ```
@@ -44,13 +43,13 @@ sequenceDiagram
 	participant Receiving Software
         participant Receiving User
 
-	Sending User-->Sending Software: Clicks "Post"
-	Sending Software-->Receiving Software: Message and VC
+	Sending User-->>Sending Software: Clicks "Post"
+	Sending Software-->>Receiving Software: Message and VC
 	Rec		
 	loop
-		Receiving Software-->Receiving Software: Check that the VC matches the name	
+		Receiving Software-->>Receiving Software: Check that the VC matches the name	
 	end
-	Receiving Software-->Receiving User: Displays Message with Verified Check
+	Receiving Software-->>Receiving User: Displays Message with Verified Check
 
 ```
 
